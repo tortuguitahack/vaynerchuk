@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VAYNERCHUK HUSTLE | Jab Jab Jab, Right Hook</title>
+<meta name="description" content="VAYNERCHUK HUSTLE - Productos digitales premium. Jab Jab Jab, Right Hook.">
+<meta name="keywords" content="social, IA, marketing, cursos, VAYNERCHUK HUSTLE">
+<meta property="og:title" content="VAYNERCHUK HUSTLE | Jab Jab Jab, Right Hook">
+<meta property="og:description" content="VAYNERCHUK HUSTLE - Jab Jab Jab, Right Hook">
+<meta property="og:type" content="website">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>tailwind.config={theme:{extend:{colors:{primary:{400:'#ec4899',500:'#ec4899',600:'#ec4899'},dark:{800:'#1e1b4b',900:'#0f0a2e',950:'#080520'}}},animation:{'pulse-slow':'pulse 3s cubic-bezier(0.4,0,0.6,1) infinite','glow':'glow 2s ease-in-out infinite alternate','slide-up':'slideUp 0.3s ease-out','fade-in':'fadeIn 0.3s ease-out'},keyframes:{glow:{'0%':{boxShadow:'0 0 5px #ec4899,0 0 10px #ec4899'},'100%':{boxShadow:'0 0 20px #ec4899,0 0 30px #ec4899'}},slideUp:{'0%':{transform:'translateY(10px)',opacity:'0'},'100%':{transform:'translateY(0)',opacity:'1'}},fadeIn:{'0%':{opacity:'0'},'100%':{opacity:'1'}}}}}}</script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:#080520;color:#e2e8f0;overflow-x:hidden}
+body::before{content:'';position:fixed;top:0;left:0;width:100%;height:100%;background:radial-gradient(ellipse at 20% 50%,rgba(0,245,255,.05) 0%,transparent 50%),radial-gradient(ellipse at 80% 20%,rgba(168,85,247,.04) 0%,transparent 50%);pointer-events:none;z-index:0}
+header{position:sticky;top:0;z-index:100;background:rgba(8,5,32,.95);backdrop-filter:blur(20px);border-bottom:1px solid rgba(0,245,255,.15);padding:1rem 2rem;display:flex;align-items:center;justify-content:space-between}
+.logo{display:flex;align-items:center;gap:.75rem}
+.logo-icon{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,#ec4899,#a855f7);display:flex;align-items:center;justify-content:center;font-size:1.2rem;font-weight:900;animation:pulse-glow 2s ease-in-out infinite}
+.logo-text{font-size:1.5rem;font-weight:800;background:linear-gradient(90deg,#ec4899,#a855f7);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.logo-omega{color:#ec4899;font-size:1.1rem;animation:glow-text 2s ease-in-out infinite}
+nav{display:flex;gap:1.5rem;align-items:center}
+nav a{color:#94a3b8;text-decoration:none;font-size:.9rem;transition:.3s}
+nav a:hover{color:#ec4899;text-shadow:0 0 10px #ec4899}
+.cart-btn{position:relative;background:linear-gradient(135deg,#a855f7,#ec4899);border:none;padding:.5rem 1rem;border-radius:8px;color:#fff;cursor:pointer;font-weight:600;transition:.3s}
+.hero{text-align:center;padding:4rem 2rem 2rem;position:relative}
+.hero h1{font-size:2.5rem;font-weight:900;margin-bottom:.5rem;background:linear-gradient(90deg,#ec4899,#a855f7,#ec4899);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero p{color:#94a3b8;font-size:1.1rem;max-width:600px;margin:0 auto}
+.stats-bar{display:flex;justify-content:center;gap:3rem;padding:1.5rem 2rem;background:rgba(15,10,46,.5);border-top:1px solid rgba(0,245,255,.1);border-bottom:1px solid rgba(0,245,255,.1)}
+.stat{text-align:center}.stat-value{font-size:1.5rem;font-weight:800;color:#ec4899}.stat-label{font-size:.75rem;color:#64748b;text-transform:uppercase;letter-spacing:.1em}
+.products-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.5rem;padding:2rem;max-width:1400px;margin:0 auto}
+.product-card{background:rgba(17,17,40,.8);border:1px solid rgba(0,245,255,.1);border-radius:16px;padding:1.5rem;position:relative;overflow:hidden;transition:all .3s ease}
+.product-card:hover{transform:translateY(-4px);border-color:rgba(0,245,255,.3);box-shadow:0 20px 40px rgba(0,0,0,.3)}
+.product-badge{position:absolute;top:1rem;right:1rem;background:rgba(0,245,255,.1);color:#ec4899;font-size:.7rem;font-weight:700;padding:.25rem .75rem;border-radius:20px;border:1px solid rgba(0,245,255,.2)}
+.product-icon{width:50px;height:50px;border-radius:12px;background:linear-gradient(135deg,rgba(0,245,255,.1),rgba(168,85,247,.1));display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin-bottom:1rem}
+.product-title{font-size:1.1rem;font-weight:700;margin-bottom:.25rem;color:#f1f5f9}
+.product-expert{font-size:.8rem;color:#ec4899;margin-bottom:.5rem}
+.product-desc{font-size:.85rem;color:#94a3b8;line-height:1.5;margin-bottom:1rem}
+.product-footer{display:flex;align-items:center;justify-content:space-between;margin-top:auto}
+.price-current{font-size:1.5rem;font-weight:900;color:#ec4899}
+.price-original{font-size:.8rem;color:#64748b;text-decoration:line-through;margin-left:.5rem}
+.buy-btn{background:linear-gradient(135deg,#ec4899,#a855f7);border:none;padding:.6rem 1.2rem;border-radius:8px;color:#fff;cursor:pointer;font-weight:700;font-size:.85rem;transition:.3s;text-transform:uppercase;letter-spacing:.05em}
+.buy-btn:hover{transform:scale(1.05);box-shadow:0 0 20px rgba(0,245,255,.4)}
+.filters{display:flex;justify-content:center;gap:.5rem;padding:1rem 2rem;flex-wrap:wrap}
+.filter-btn{background:rgba(17,17,40,.5);border:1px solid rgba(0,245,255,.1);color:#94a3b8;padding:.4rem 1rem;border-radius:20px;cursor:pointer;font-size:.8rem;transition:.3s}
+.filter-btn:hover,.filter-btn.active{background:rgba(0,245,255,.1);color:#ec4899;border-color:rgba(0,245,255,.3)}
+.toast{position:fixed;bottom:2rem;right:2rem;background:rgba(17,17,40,.95);border:1px solid #ec4899;border-radius:12px;padding:1rem 1.5rem;color:#f1f5f9;z-index:1000;transform:translateY(100px);opacity:0;transition:.3s;backdrop-filter:blur(10px)}
+.toast.show{transform:translateY(0);opacity:1}
+footer{text-align:center;padding:2rem;border-top:1px solid rgba(0,245,255,.1);color:#64748b;font-size:.8rem}
+footer a{color:#ec4899;text-decoration:none}
+@media(max-width:768px){.products-grid{grid-template-columns:1fr;padding:1rem}.hero h1{font-size:1.8rem}.stats-bar{flex-direction:column;gap:1rem}nav{display:none}}
+</style>
+</head>
+<body>
+<header>
+  <div class="logo">
+    <div class="logo-icon">📱</div>
+    <div><div class="logo-text">VAYNERCHUK HUSTLE</div><div class="logo-omega">Jab Jab Jab, Right Hook</div></div>
+  </div>
+  <nav>
+    <a href="#products">Productos</a>
+    <a href="#experts">Expertos</a>
+    <a href="#pricing">Precios</a>
+    <button class="cart-btn" onclick="viewCart()">&#128722; <span id="cart-count">0</span></button>
+  </nav>
+</header>
+<section class="hero">
+  <h1>📱 VAYNERCHUK HUSTLE</h1>
+  <p>Jab Jab Jab, Right Hook. Productos digitales premium dise&ntilde;ados por los mejores expertos del mundo.</p>
+</section>
+<div class="stats-bar">
+  <div class="stat"><div class="stat-value">10</div><div class="stat-label">Productos</div></div>
+  <div class="stat"><div class="stat-value">24/7</div><div class="stat-label">Acceso</div></div>
+  <div class="stat"><div class="stat-value">4.8&#9733;</div><div class="stat-label">Rating</div></div>
+  <div class="stat"><div class="stat-value">30d</div><div class="stat-label">Garant&iacute;a</div></div>
+</div>
+<div class="filters">
+  <button class="filter-btn active" onclick="filterProducts('all')">Todos</button>
+  <button class="filter-btn" onclick="filterProducts('starter')">Starter $6.99</button>
+  <button class="filter-btn" onclick="filterProducts('pro')">Pro $9.99</button>
+  <button class="filter-btn" onclick="filterProducts('premium')">Premium $14.99</button>
+</div>
+<div class="products-grid" id="products-grid">
+<div class="product-card" data-index="0"><div class="product-badge">Gary Vaynerchuk</div><div class="product-icon">📱</div><h3 class="product-title">Personal Brand Empire</h3><p class="product-expert">by Gary Vaynerchuk</p><p class="product-desc">Construye tu marca personal millonaria desde cero.</p><div class="product-footer"><div><span class="price-current">$6.99</span><span class="price-original">$20.97</span></div><button class="buy-btn" onclick="buyProduct('ELITE-0001',6.99)">BUY NOW</button></div></div>
+<div class="product-card" data-index="1"><div class="product-badge">Gary Vaynerchuk</div><div class="product-icon">📱</div><h3 class="product-title">Jab Jab Jab System</h3><p class="product-expert">by Gary Vaynerchuk</p><p class="product-desc">La estrategia de contenido que construye imperios.</p><div class="product-footer"><div><span class="price-current">$6.99</span><span class="price-original">$20.97</span></div><button class="buy-btn" onclick="buyProduct('ELITE-0002',6.99)">BUY NOW</button></div></div>
+<div class="product-card" data-index="2"><div class="product-badge">Gary Vaynerchuk</div><div class="product-icon">📱</div><h3 class="product-title">Crushing It Blueprint</h3><p class="product-expert">by Gary Vaynerchuk</p><p class="product-desc">El manual definitivo de emprendimiento moderno.</p><div class="product-footer"><div><span class="price-current">$6.99</span><span class="price-original">$20.97</span></div><button class="buy-btn" onclick="buyProduct('ELITE-0003',6.99)">BUY NOW</button></div></div>
+<div class="product-card" data-index="3"><div class="product-badge">Gary Vaynerchuk</div><div class="product-icon">📱</div><h3 class="product-title">Social Media Viral Lab</h3><p class="product-expert">by Gary Vaynerchuk</p><p class="product-desc">Crea contenido que alcanza 100K+ vistas garantizado.</p><div class="product-footer"><div><span class="price-current">$9.99</span><span class="price-original">$29.97</span></div><button class="buy-btn" onclick="buyProduct('ELITE-0004',9.99)">BUY NOW</button></div></div>
+<div class="product-card" data-index="4"><div class="product-badge">Donald Miller</div><div class="product-icon">📱</div><h3 class="product-title">StoryBrand Framework</h3><p class="product-expert">by Donald Miller</p><p class="product-desc">Claridad que convierte extraños en clientes fieles.</p><div class="product-footer"><div><span class="price-current">$6.99</span><span class="price-original">$20.97</span></div><button class="buy-btn" onclick="buyProduct('ELITE-0005',6.99)">BUY NOW</button></div></div>
+<div class="product-card" data-index="5"><div class="product-badge">Robert Cialdini</div><div class="product-icon">📱</div><h3 class="product-title">Influence Psychology</h3><p class="product-expert">by Robert Cialdini</p><p class="product-desc">Aumenta conversiones 300% con 6 principios.</p><div class="product-footer"><div><span class="price-current">$6.99</span><span class="price-original">$20.97</span></div><button class="buy-btn" onclick="buyProduct('ELITE-0006',6.99)">BUY NOW</button></div></div>
+<div class="product-card" data-index="6"><div class="product-badge">Jonah Berger</div><div class="product-icon">📱</div><h3 class="product-title">Viral Content Science</h3><p class="product-expert">by Jonah Berger</p><p class="product-desc">STEPPS: la ciencia detras del contenido viral.</p><div class="product-footer"><div><span class="price-current">$6.99</span><span class="price-original">$20.97</span></div><button class="buy-btn" onclick="buyProduct('ELITE-0007',6.99)">BUY NOW</button></div></div>
+<div class="product-card" data-index="7"><div class="product-badge">Nir Eyal</div><div class="product-icon">📱</div><h3 class="product-title">Hook Model Pro</h3><p class="product-expert">by Nir Eyal</p><p class="product-desc">Crea habitos de compra desde el primer dia.</p><div class="product-footer"><div><span class="price-current">$6.99</span><span class="price-original">$20.97</span></div><button class="buy-btn" onclick="buyProduct('ELITE-0008',6.99)">BUY NOW</button></div></div>
+<div class="product-card" data-index="8"><div class="product-badge">Jay Baer</div><div class="product-icon">📱</div><h3 class="product-title">Utility First Marketing</h3><p class="product-expert">by Jay Baer</p><p class="product-desc">La utilidad es la nueva publicidad del siglo XXI.</p><div class="product-footer"><div><span class="price-current">$6.99</span><span class="price-original">$20.97</span></div><button class="buy-btn" onclick="buyProduct('ELITE-0009',6.99)">BUY NOW</button></div></div>
+<div class="product-card" data-index="9"><div class="product-badge">Malcolm Gladwell</div><div class="product-icon">📱</div><h3 class="product-title">Tipping Points Strategy</h3><p class="product-expert">by Malcolm Gladwell</p><p class="product-desc">Como las ideas se propagan exponencialmente.</p><div class="product-footer"><div><span class="price-current">$6.99</span><span class="price-original">$20.97</span></div><button class="buy-btn" onclick="buyProduct('ELITE-0010',6.99)">BUY NOW</button></div></div>
+</div>
+<div class="toast" id="toast"></div>
+<footer>
+  <p>&copy; 2026 VAYNERCHUK HUSTLE &mdash; Powered by <a href="#">DIHACKTOR OS</a></p>
+  <p style="margin-top:.5rem;font-size:.7rem">Pagos seguros via Stripe | Acceso instant&aacute;neo | Garant&iacute;a 30 d&iacute;as</p>
+</footer>
+<script>
+const PRODUCTS=[{"uid": "ELITE-0001", "title": "Personal Brand Empire", "expert": "Gary Vaynerchuk", "description": "Construye tu marca personal millonaria desde cero.", "price": 6.99, "compare_price": 20.97, "category": "social", "emoji": "📱"}, {"uid": "ELITE-0002", "title": "Jab Jab Jab System", "expert": "Gary Vaynerchuk", "description": "La estrategia de contenido que construye imperios.", "price": 6.99, "compare_price": 20.97, "category": "social", "emoji": "📱"}, {"uid": "ELITE-0003", "title": "Crushing It Blueprint", "expert": "Gary Vaynerchuk", "description": "El manual definitivo de emprendimiento moderno.", "price": 6.99, "compare_price": 20.97, "category": "social", "emoji": "📱"}, {"uid": "ELITE-0004", "title": "Social Media Viral Lab", "expert": "Gary Vaynerchuk", "description": "Crea contenido que alcanza 100K+ vistas garantizado.", "price": 9.99, "compare_price": 29.97, "category": "social", "emoji": "📱"}, {"uid": "ELITE-0005", "title": "StoryBrand Framework", "expert": "Donald Miller", "description": "Claridad que convierte extraños en clientes fieles.", "price": 6.99, "compare_price": 20.97, "category": "social", "emoji": "📱"}, {"uid": "ELITE-0006", "title": "Influence Psychology", "expert": "Robert Cialdini", "description": "Aumenta conversiones 300% con 6 principios.", "price": 6.99, "compare_price": 20.97, "category": "social", "emoji": "📱"}, {"uid": "ELITE-0007", "title": "Viral Content Science", "expert": "Jonah Berger", "description": "STEPPS: la ciencia detras del contenido viral.", "price": 6.99, "compare_price": 20.97, "category": "social", "emoji": "📱"}, {"uid": "ELITE-0008", "title": "Hook Model Pro", "expert": "Nir Eyal", "description": "Crea habitos de compra desde el primer dia.", "price": 6.99, "compare_price": 20.97, "category": "social", "emoji": "📱"}, {"uid": "ELITE-0009", "title": "Utility First Marketing", "expert": "Jay Baer", "description": "La utilidad es la nueva publicidad del siglo XXI.", "price": 6.99, "compare_price": 20.97, "category": "social", "emoji": "📱"}, {"uid": "ELITE-0010", "title": "Tipping Points Strategy", "expert": "Malcolm Gladwell", "description": "Como las ideas se propagan exponencialmente.", "price": 6.99, "compare_price": 20.97, "category": "social", "emoji": "📱"}];
+let cart=JSON.parse(localStorage.getItem('cart')||'[]');
+function updateCartCount(){document.getElementById('cart-count').textContent=cart.length;localStorage.setItem('cart',JSON.stringify(cart))}
+function buyProduct(uid,price){cart.push({uid,price,time:Date.now()});updateCartCount();showToast('Agregado al carrito');setTimeout(()=>window.open('https://buy.stripe.com/test_28EbJ1bzsg1yeWi79V3cc02','_blank'),500)}
+function viewCart(){if(cart.length===0){showToast('Tu carrito esta vacio');return}const t=cart.reduce((s,i)=>s+i.price,0);showToast(cart.length+' items | $'+t.toFixed(2)+' - Redirigiendo...');setTimeout(()=>window.open('https://buy.stripe.com/test_28EbJ1bzsg1yeWi79V3cc02','_blank'),1000)}
+function filterProducts(f){document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));event.target.classList.add('active');document.querySelectorAll('.product-card').forEach(c=>{if(f==='all'){c.style.display='block'}else{const p=parseFloat(c.querySelector('.price-current').textContent.replace('$',''));if(f==='starter'&&p<=7)c.style.display='block';else if(f==='pro'&&p>7&&p<=10)c.style.display='block';else if(f==='premium'&&p>10)c.style.display='block';else c.style.display='none'}})}
+function showToast(m){const t=document.getElementById('toast');t.textContent=m;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),3000)}
+updateCartCount();
+</script>
+</body></html>
