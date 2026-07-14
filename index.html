@@ -1,143 +1,29 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>VAYNERCHUK HUSTLE | Jab Jab Jab, Right Hook</title>
-<meta name="description" content="VAYNERCHUK HUSTLE - Productos digitales premium. Jab Jab Jab, Right Hook.">
-<meta name="theme-color" content="#0a0a0f">
-<style>
-*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-:root{
-  --bg:#0a0a0f;--bg2:#111118;--bg3:#1a1a24;--card:#14141f;
-  --border:#222233;--text:#e4e4ed;--text2:#888899;--text3:#555566;
-  --primary:#ec4899;--accent:#f59e0b;--success:#22c55e;--radius:12px;
-}
-html{scroll-behavior:smooth}
-body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
-::selection{background:var(--primary);color:#000}
-a{color:var(--primary);text-decoration:none;transition:.2s}
-a:hover{color:#fff}
-.container{max-width:1200px;margin:0 auto;padding:0 24px}
-
-/* HEADER */
-header{position:sticky;top:0;z-index:100;background:rgba(10,10,15,.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:16px 0}
-header .container{display:flex;align-items:center;justify-content:space-between}
-.logo{display:flex;align-items:center;gap:12px;font-weight:800;font-size:1.25rem;color:#fff}
-.logo span{color:var(--primary)}
-nav{display:flex;gap:32px;align-items:center}
-nav a{color:var(--text2);font-size:.875rem;font-weight:500}
-nav a:hover{color:#fff}
-.cart-btn{background:var(--primary);color:#000;border:none;padding:8px 20px;border-radius:8px;cursor:pointer;font-weight:700;font-size:.875rem;transition:.2s}
-.cart-btn:hover{filter:brightness(1.15);transform:translateY(-1px)}
-
-/* HERO */
-.hero{padding:80px 0 60px;text-align:center;position:relative;overflow:hidden}
-.hero::before{content:'';position:absolute;top:-50%;left:50%;transform:translateX(-50%);width:800px;height:800px;background:radial-gradient(circle,var(--primary) 0%,transparent 70%);opacity:.06;pointer-events:none}
-.hero h1{font-size:clamp(2rem,5vw,3.2rem);font-weight:900;margin-bottom:16px;letter-spacing:-.02em;line-height:1.1}
-.hero h1 span{color:var(--primary)}
-.hero p{color:var(--text2);font-size:1.1rem;max-width:540px;margin:0 auto 32px}
-.hero-stats{display:flex;justify-content:center;gap:48px;margin-top:48px}
-.stat{text-align:center}
-.stat-value{font-size:1.5rem;font-weight:800;color:#fff}
-.stat-label{font-size:.7rem;color:var(--text3);text-transform:uppercase;letter-spacing:.1em;margin-top:4px}
-
-/* PRODUCTS */
-.products{padding:40px 0 80px}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:24px}
-.card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:28px;position:relative;transition:.25s;display:flex;flex-direction:column}
-.card:hover{border-color:var(--primary);transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,.3)}
-.card-badge{position:absolute;top:16px;right:16px;background:rgba(255,255,255,.06);color:var(--text2);font-size:.65rem;font-weight:600;padding:4px 10px;border-radius:6px;text-transform:uppercase;letter-spacing:.05em}
-.card-icon{width:48px;height:48px;border-radius:10px;background:rgba(255,255,255,.04);display:flex;align-items:center;justify-content:center;font-size:1.4rem;margin-bottom:16px;border:1px solid var(--border)}
-.card h3{font-size:1rem;font-weight:700;margin-bottom:4px;color:#fff}
-.card .expert{font-size:.75rem;color:var(--primary);margin-bottom:12px;font-weight:500}
-.card .desc{font-size:.85rem;color:var(--text2);line-height:1.5;flex:1;margin-bottom:20px}
-.card-footer{display:flex;align-items:center;justify-content:space-between;margin-top:auto;padding-top:16px;border-top:1px solid var(--border)}
-.price{font-size:1.5rem;font-weight:900;color:#fff}
-.price small{font-size:.75rem;color:var(--text3);text-decoration:line-through;margin-left:8px;font-weight:400}
-.buy{background:var(--primary);color:#000;border:none;padding:10px 24px;border-radius:8px;cursor:pointer;font-weight:700;font-size:.875rem;transition:.2s;white-space:nowrap}
-.buy:hover{filter:brightness(1.15);transform:scale(1.02)}
-
-/* FOOTER */
-footer{text-align:center;padding:40px 0;border-top:1px solid var(--border);color:var(--text3);font-size:.75rem}
-footer a{color:var(--text2)}
-
-/* TOAST */
-.toast{position:fixed;bottom:24px;right:24px;background:var(--bg3);border:1px solid var(--primary);border-radius:var(--radius);padding:16px 24px;color:#fff;z-index:1000;transform:translateY(100px);opacity:0;transition:.3s;font-size:.875rem}
-.toast.show{transform:translateY(0);opacity:1}
-
-@media(max-width:768px){
-  nav{display:none}
-  .hero{padding:60px 0 40px}
-  .hero-stats{flex-direction:column;gap:24px}
-  .grid{grid-template-columns:1fr}
-}
-</style>
-</head>
-<body>
-
-<header>
-  <div class="container">
-    <div class="logo">📱 <span>VAYNERCHUK HUSTLE</span></div>
-    <nav>
-      <a href="#productos">Productos</a>
-      <a href="#expertos">Expertos</a>
-      <button class="cart-btn" onclick="viewCart()">&#128722; <span id="cart-count">0</span></button>
-    </nav>
-  </div>
-</header>
-
-<section class="hero">
-  <div class="container">
-    <h1>📱 <span>VAYNERCHUK HUSTLE</span></h1>
-    <p>Jab Jab Jab, Right Hook. Productos digitales premium disenados por los mejores expertos del mundo.</p>
-    <div class="hero-stats">
-      <div class="stat"><div class="stat-value">10</div><div class="stat-label">Productos</div></div>
-      <div class="stat"><div class="stat-value">24/7</div><div class="stat-label">Acceso</div></div>
-      <div class="stat"><div class="stat-value">4.8&#9733;</div><div class="stat-label">Rating</div></div>
-      <div class="stat"><div class="stat-value">30d</div><div class="stat-label">Garant&iacute;a</div></div>
-    </div>
-  </div>
-</section>
-
-<section class="products" id="productos">
-  <div class="container">
-    <div class="grid">
-<div class="card"><div class="card-badge">Gary Vaynerchuk</div><div class="card-icon">📱</div><h3>Personal Brand Empire</h3><div class="expert">by Gary Vaynerchuk</div><div class="desc">Construye tu marca personal millonaria desde cero.</div><div class="card-footer"><div class="price">$6.99 <small>$20.97</small></div><button class="buy" onclick="buyProduct('ELITE-0001','Personal Brand Empire',6.99)">COMPRAR</button></div></div>
-<div class="card"><div class="card-badge">Gary Vaynerchuk</div><div class="card-icon">📱</div><h3>Jab Jab Jab System</h3><div class="expert">by Gary Vaynerchuk</div><div class="desc">La estrategia de contenido que construye imperios.</div><div class="card-footer"><div class="price">$6.99 <small>$20.97</small></div><button class="buy" onclick="buyProduct('ELITE-0002','Jab Jab Jab System',6.99)">COMPRAR</button></div></div>
-<div class="card"><div class="card-badge">Gary Vaynerchuk</div><div class="card-icon">📱</div><h3>Crushing It Blueprint</h3><div class="expert">by Gary Vaynerchuk</div><div class="desc">El manual definitivo de emprendimiento moderno.</div><div class="card-footer"><div class="price">$6.99 <small>$20.97</small></div><button class="buy" onclick="buyProduct('ELITE-0003','Crushing It Blueprint',6.99)">COMPRAR</button></div></div>
-<div class="card"><div class="card-badge">Gary Vaynerchuk</div><div class="card-icon">📱</div><h3>Social Media Viral Lab</h3><div class="expert">by Gary Vaynerchuk</div><div class="desc">Crea contenido que alcanza 100K+ vistas garantizado.</div><div class="card-footer"><div class="price">$6.99 <small>$20.97</small></div><button class="buy" onclick="buyProduct('ELITE-0004','Social Media Viral Lab',6.99)">COMPRAR</button></div></div>
-<div class="card"><div class="card-badge">Donald Miller</div><div class="card-icon">📱</div><h3>StoryBrand Framework</h3><div class="expert">by Donald Miller</div><div class="desc">Claridad que convierte extraños en clientes fieles.</div><div class="card-footer"><div class="price">$6.99 <small>$20.97</small></div><button class="buy" onclick="buyProduct('ELITE-0005','StoryBrand Framework',6.99)">COMPRAR</button></div></div>
-<div class="card"><div class="card-badge">Robert Cialdini</div><div class="card-icon">📱</div><h3>Influence Psychology</h3><div class="expert">by Robert Cialdini</div><div class="desc">Aumenta conversiones 300% con 6 principios.</div><div class="card-footer"><div class="price">$6.99 <small>$20.97</small></div><button class="buy" onclick="buyProduct('ELITE-0006','Influence Psychology',6.99)">COMPRAR</button></div></div>
-<div class="card"><div class="card-badge">Jonah Berger</div><div class="card-icon">📱</div><h3>Viral Content Science</h3><div class="expert">by Jonah Berger</div><div class="desc">STEPPS: la ciencia detras del contenido viral.</div><div class="card-footer"><div class="price">$6.99 <small>$20.97</small></div><button class="buy" onclick="buyProduct('ELITE-0007','Viral Content Science',6.99)">COMPRAR</button></div></div>
-<div class="card"><div class="card-badge">Nir Eyal</div><div class="card-icon">📱</div><h3>Hook Model Pro</h3><div class="expert">by Nir Eyal</div><div class="desc">Crea habitos de compra desde el primer dia.</div><div class="card-footer"><div class="price">$6.99 <small>$20.97</small></div><button class="buy" onclick="buyProduct('ELITE-0008','Hook Model Pro',6.99)">COMPRAR</button></div></div>
-<div class="card"><div class="card-badge">Jay Baer</div><div class="card-icon">📱</div><h3>Utility First Marketing</h3><div class="expert">by Jay Baer</div><div class="desc">La utilidad es la nueva publicidad del siglo XXI.</div><div class="card-footer"><div class="price">$6.99 <small>$20.97</small></div><button class="buy" onclick="buyProduct('ELITE-0009','Utility First Marketing',6.99)">COMPRAR</button></div></div>
-<div class="card"><div class="card-badge">Malcolm Gladwell</div><div class="card-icon">📱</div><h3>Tipping Points Strategy</h3><div class="expert">by Malcolm Gladwell</div><div class="desc">Como las ideas se propagan exponencialmente.</div><div class="card-footer"><div class="price">$6.99 <small>$20.97</small></div><button class="buy" onclick="buyProduct('ELITE-0010','Tipping Points Strategy',6.99)">COMPRAR</button></div></div>
-    </div>
-  </div>
-</section>
-
-<footer>
-  <div class="container">
-    <p>&copy; 2026 VAYNERCHUK HUSTLE &mdash; Powered by <a href="#">DIHACKTOR OS</a></p>
-    <p style="margin-top:8px">Pagos seguros via Stripe / Crypto | Acceso instant&aacute;neo | Garant&iacute;a 30 d&iacute;as</p>
-  </div>
-</footer>
-
-<div class="toast" id="toast"></div>
-
+<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>DIHACKTOR Ω — Marketing | 1M Productos @ $6.99</title>
+<meta name="description" content="Catálogo de productos digitales de marketing. Agentes IA, cursos, ebooks y workflows. Precio fijo $6.99. Compra con tarjeta o crypto.">
+<meta name="robots" content="index,follow">
+<meta property="og:title" content="DIHACKTOR Ω — Marketing | 1M Productos @ $6.99"><meta property="og:description" content="Catálogo de productos digitales de marketing. Agentes IA, cursos, ebooks y workflows. Precio fijo $6.99. Compra con tarjeta o crypto.">
+<style>:root{--bg:#0a0a0f;--gold:#d4af37;--txt:#e8e8ee;--muted:#9a9ab0;--card:rgba(255,255,255,.04);--border:rgba(212,175,55,.25)}
+*{margin:0;padding:0;box-sizing:border-box}body{background:var(--bg);color:var(--txt);font-family:system-ui,sans-serif;line-height:1.6}
+header{padding:40px 20px;text-align:center;border-bottom:1px solid var(--border);background:radial-gradient(circle at 50% -20%,rgba(212,175,55,.15),transparent 60%)}
+h1{font-size:clamp(1.6rem,4vw,2.6rem);color:var(--gold);font-weight:800}
+.tag{color:var(--muted);margin-top:8px}.sub{color:var(--gold);font-weight:600;margin-top:6px}
+.wrap{max-width:1100px;margin:0 auto;padding:30px 20px}.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px;margin-top:20px}
+.card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:18px}
+.card .cat{font-size:.7rem;color:var(--gold);text-transform:uppercase;letter-spacing:1px}
+.card h3{font-size:1rem;margin:6px 0;line-height:1.35}
+.meta{display:flex;justify-content:space-between;align-items:center;margin-top:12px}
+.price{font-size:1.3rem;font-weight:800;color:var(--gold)}.btn{background:var(--gold);color:#000;font-weight:700;padding:8px 16px;border-radius:8px;text-decoration:none}
+footer{border-top:1px solid var(--border);padding:24px;text-align:center;color:var(--muted);font-size:.8rem;margin-top:30px}
+input{background:var(--card);border:1px solid var(--border);color:var(--txt);padding:10px 14px;border-radius:10px;width:100%;margin-bottom:16px}</style></head>
+<body><header><h1>DIHACKTOR Ω — Marketing | 1M Productos @ $6.99</h1><p class="tag">Catálogo Marketing</p><p class="sub">1,000,000 productos · $6.99 USD · Tarjeta o crypto</p></header>
+<main class="wrap"><input id="s" placeholder="Buscar..."><div id="g" class="grid"><p style="color:var(--muted)">Cargando...</p></div></main>
+<footer>DIHACKTOR Ω · Catálogo Marketing</footer>
 <script>
-const PRODUCTS=[{"uid": "ELITE-0001", "title": "Personal Brand Empire", "expert": "Gary Vaynerchuk", "description": "Construye tu marca personal millonaria desde cero.", "price": 6.99, "compare_price": 20.97, "category": "social", "emoji": "📱"}, {"uid": "ELITE-0002", "title": "Jab Jab Jab System", "expert": "Gary Vaynerchuk", "description": "La estrategia de contenido que construye imperios.", "price": 6.99, "compare_price": 20.97, "category": "social", "emoji": "📱"}, {"uid": "ELITE-0003", "title": "Crushing It Blueprint", "expert": "Gary Vaynerchuk", "description": "El manual definitivo de emprendimiento moderno.", "price": 6.99, "compare_price": 20.97, "category": "social", "emoji": "📱"}, {"uid": "ELITE-0004", "title": "Social Media Viral Lab", "expert": "Gary Vaynerchuk", "description": "Crea contenido que alcanza 100K+ vistas garantizado.", "price": 6.99, "compare_price": 20.97, "category": "social", "emoji": "📱"}, {"uid": "ELITE-0005", "title": "StoryBrand Framework", "expert": "Donald Miller", "description": "Claridad que convierte extraños en clientes fieles.", "price": 6.99, "compare_price": 20.97, "category": "social", "emoji": "📱"}, {"uid": "ELITE-0006", "title": "Influence Psychology", "expert": "Robert Cialdini", "description": "Aumenta conversiones 300% con 6 principios.", "price": 6.99, "compare_price": 20.97, "category": "social", "emoji": "📱"}, {"uid": "ELITE-0007", "title": "Viral Content Science", "expert": "Jonah Berger", "description": "STEPPS: la ciencia detras del contenido viral.", "price": 6.99, "compare_price": 20.97, "category": "social", "emoji": "📱"}, {"uid": "ELITE-0008", "title": "Hook Model Pro", "expert": "Nir Eyal", "description": "Crea habitos de compra desde el primer dia.", "price": 6.99, "compare_price": 20.97, "category": "social", "emoji": "📱"}, {"uid": "ELITE-0009", "title": "Utility First Marketing", "expert": "Jay Baer", "description": "La utilidad es la nueva publicidad del siglo XXI.", "price": 6.99, "compare_price": 20.97, "category": "social", "emoji": "📱"}, {"uid": "ELITE-0010", "title": "Tipping Points Strategy", "expert": "Malcolm Gladwell", "description": "Como las ideas se propagan exponencialmente.", "price": 6.99, "compare_price": 20.97, "category": "social", "emoji": "📱"}];
-const PAY_LINK="https://app.takenos.com/pay/6eaca743-3599-41c3-a62b-ee6b748b202d";
-let cart=JSON.parse(localStorage.getItem('cart')||'[]');
-function updateCart(){document.getElementById('cart-count').textContent=cart.length;localStorage.setItem('cart',JSON.stringify(cart))}
-function buyProduct(uid,title,price){cart.push({uid,title,price,time:Date.now()});updateCart();showToast('✓ Agregado: '+title);setTimeout(()=>window.open(PAY_LINK,'_blank'),800)}
-function viewCart(){if(!cart.length){showToast('Tu carrito esta vacio');return}const t=cart.reduce((s,i)=>s+i.price,0);showToast(cart.length+' items | $'+t.toFixed(2)+' USD — Redirigiendo a pago...');setTimeout(()=>window.open(PAY_LINK,'_blank'),1200)}
-function showToast(m){const t=document.getElementById('toast');t.textContent=m;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),3000)}
-updateCart();
-</script>
-
-<!-- DIHACKTOR NETWORK -->
-<footer style="text-align:center;padding:2rem;margin-top:3rem;border-top:1px solid #333"><p style="color:#888;font-size:12px">Parte del ecosistema <a href="https://tortuguitahack.github.io/omega/" style="color:#00f2ff">DIHACKTOR Ω</a> — 1.000.000 productos IA por $6.99 | <a href="https://tortuguitahack.github.io/omega/" style="color:#00f2ff">Ver catalogo completo</a></p></footer>
-</body>
-</html>
+const API="https://beverage-preferred-starring-restaurant.trycloudflare.com/api/master",BUY=p=>`https://beverage-preferred-starring-restaurant.trycloudflare.com/go?e=EXP-0001&p={uid}&m=whop`;let off=0,q="";
+async function load(){const r=await fetch(`${API}/products?limit=30&offset=${off}${q?'&q='+encodeURIComponent(q):''}`);const d=await r.json();
+document.getElementById('g').innerHTML='';(d.products||[]).forEach(p=>{const c=document.createElement('div');c.className='card';
+c.innerHTML=`<div class="cat">${p.category||p.ecosystem}</div><h3>${p.title}</h3><div class="meta"><span class="price">$6.99</span><a class="btn" href="${BUY(p.uid)}" target="_blank">COMPRAR</a></div>`;document.getElementById('g').appendChild(c);});off+=30;}
+document.getElementById('s').oninput=e=>{q=e.target.value;off=0;load();};load();
+</script></body></html>
