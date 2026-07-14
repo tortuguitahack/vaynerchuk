@@ -21,7 +21,7 @@ input{background:var(--card);border:1px solid var(--border);color:var(--txt);pad
 <main class="wrap"><input id="s" placeholder="Buscar..."><div id="g" class="grid"><p style="color:var(--muted)">Cargando...</p></div></main>
 <footer>DIHACKTOR Ω · Catálogo Marketing</footer>
 <script>
-const API="https://beverage-preferred-starring-restaurant.trycloudflare.com/api/master",BUY=p=>`https://beverage-preferred-starring-restaurant.trycloudflare.com/go?e=EXP-0001&p={uid}&m=whop`;let off=0,q="";
+const API="https://tries-lace-computing-dude.trycloudflare.com/api/master",BUY=p=>`https://tries-lace-computing-dude.trycloudflare.com/go?e=EXP-0001&p={uid}&m=whop`;let off=0,q="";
 async function load(){const r=await fetch(`${API}/products?limit=30&offset=${off}${q?'&q='+encodeURIComponent(q):''}`);const d=await r.json();
 document.getElementById('g').innerHTML='';(d.products||[]).forEach(p=>{const c=document.createElement('div');c.className='card';
 c.innerHTML=`<div class="cat">${p.category||p.ecosystem}</div><h3>${p.title}</h3><div class="meta"><span class="price">$6.99</span><a class="btn" href="${BUY(p.uid)}" target="_blank">COMPRAR</a></div>`;document.getElementById('g').appendChild(c);});off+=30;}
